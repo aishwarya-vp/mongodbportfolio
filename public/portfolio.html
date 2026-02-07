@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Aishwarya | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(120deg, #f6f9ff, #eef1f7);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 16px;
+        }
+
+        /* Cards */
+        .card {
+            background: #ffffff;
+            padding: 22px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            margin-top: 15px;
+            color: #2c3e50;
+        }
+
+        /* Skills */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills span {
+            background: #e8f0fe;
+            color: #1a73e8;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* Links */
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Logout Button */
+        .logout-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .logout-btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Aishwarya V Prasad</h1>
+        <p class="subtitle">
+            Computer Science Undergraduate | AI • ML • Full-Stack Web Development
+        </p>
+    </div>
+
+    <!-- Contact -->
+    <section class="card">
+        <h2>📧 Contact</h2>
+        <p><strong>Email:</strong> <span id="userEmail"></span></p>
+        <p><strong>LinkedIn:</strong>
+            <a href="https://www.linkedin.com/in/aishwarya-v-3426b62a4" target="_blank">
+                linkedin.com/in/aishwarya-v-3426b62a4
+            </a>
+        </p>
+    </section>
+
+    <!-- About -->
+    <section class="card">
+        <h2>👩‍💻 About Me</h2>
+        <p>
+            I am a Computer Science undergraduate at M S Ramaiah University of Applied Sciences
+            with a strong passion for Artificial Intelligence, Machine Learning, and Full-Stack
+            Web Development. I enjoy building scalable, real-world applications that combine
+            intelligent data processing with clean and user-friendly interfaces.
+        </p>
+    </section>
+
+    <!-- Education -->
+    <section class="card">
+        <h2>🎓 Education</h2>
+        <ul>
+            <li>
+                <strong>Bachelor of Computer Science</strong><br>
+                M S Ramaiah University of Applied Sciences, Bengaluru<br>
+                CGPA: 8.50
+            </li>
+            <li>
+                <strong>Pre-University (PUC)</strong><br>
+                Base PU College, Bengaluru
+            </li>
+        </ul>
+    </section>
+
+    <!-- Skills -->
+    <section class="card">
+        <h2>🛠️ Skills</h2>
+        <div class="skills">
+            <span>Python</span>
+            <span>Java</span>
+            <span>OOPs</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>ReactJS</span>
+            <span>Flask</span>
+            <span>MySQL</span>
+            <span>MongoDB</span>
+            <span>Machine Learning</span>
+            <span>TensorFlow</span>
+            <span>LangChain</span>
+            <span>LLMs</span>
+            <span>Data Analysis</span>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="card">
+        <h2>📂 Projects</h2>
+
+        <h3>AI-Powered Legal Advisor</h3>
+        <p>
+            Developed a full-stack AI legal assistant using Flask, InLegalBERT, FAISS, and LangChain
+            to retrieve IPC sections and generate context-aware legal answers. Integrated a
+            Bi-GRU deep learning model for judgment prediction and automated legal document
+            generation using Gemini API.
+        </p>
+
+        <h3>Diabetes Prediction using Machine Learning</h3>
+        <p>
+            Built a predictive ML model using SVM with RBF kernel on the Pima Indians Diabetes
+            dataset. Achieved 72.7% accuracy and 0.77 ROC-AUC with feature engineering,
+            exploratory data analysis, and performance evaluation.
+        </p>
+
+        <h3>Student Management System</h3>
+        <p>
+            Designed and implemented a web-based student management system using Flask,
+            SQLAlchemy, and MySQL with secure authentication, relational database models,
+            triggers, and attendance management.
+        </p>
+    </section>
+
+    <!-- Achievements -->
+    <section class="card">
+        <h2>🏆 Achievements & Certifications</h2>
+        <ul>
+            <li>Presented AI Legal Advisor project to Atos Global Leadership</li>
+            <li>50-Days LeetCode Badge</li>
+            <li>AIML Made Easy – Udemy</li>
+            <li>Secure Software Development Life Cycle – eMudhra</li>
+            <li>Digital Security Workshop (On-Site)</li>
+        </ul>
+    </section>
+
+    <!-- Logout -->
+    <button class="logout-btn" onclick="logout()">Logout</button>
+
+</div>
+
+<script>
+    const email = localStorage.getItem("userEmail");
+
+    if (!email) {
+        window.location.href = "/";
+    }
+
+    document.getElementById("userEmail").innerText = email;
+
+    function logout() {
+        localStorage.removeItem("userEmail");
+        window.location.href = "/";
+    }
+</script>
+
+</body>
+</html>
