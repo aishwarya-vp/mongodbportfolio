@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Portfolio Login</title>
+    <title>Aishwarya V Prasad | Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
@@ -13,6 +13,18 @@
             justify-content: center;
             align-items: center;
             background: linear-gradient(120deg, #667eea, #764ba2);
+        }
+
+        .page {
+            text-align: center;
+        }
+
+        /* Top Title */
+        .main-title {
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 25px;
         }
 
         .container {
@@ -36,13 +48,11 @@
         }
 
         h2 {
-            text-align: center;
             margin-bottom: 5px;
             color: #2c3e50;
         }
 
         .subtitle {
-            text-align: center;
             font-size: 14px;
             color: #666;
             margin-bottom: 20px;
@@ -104,22 +114,28 @@
 
 <body>
 
-<div class="container">
-
-    <h2 id="formTitle">Register</h2>
-    <p class="subtitle">Access your personal portfolio</p>
-
-    <input type="email" id="email" placeholder="Email address" required>
-    <input type="password" id="password" placeholder="Password" required>
-
-    <button onclick="handleSubmit()">Continue</button>
-
-    <div class="message" id="message"></div>
-
-    <div class="link" onclick="toggleForm()">
-        Already have an account? Login
+<div class="page">
+    <!-- TOP TITLE -->
+    <div class="main-title">
+        Aishwarya V Prasad – Portfolio
     </div>
 
+    <!-- LOGIN / REGISTER CARD -->
+    <div class="container">
+        <h2 id="formTitle">Register</h2>
+        <p class="subtitle">Access your personal portfolio</p>
+
+        <input type="email" id="email" placeholder="Email address" required>
+        <input type="password" id="password" placeholder="Password" required>
+
+        <button onclick="handleSubmit()">Continue</button>
+
+        <div class="message" id="message"></div>
+
+        <div class="link" onclick="toggleForm()">
+            Already have an account? Login
+        </div>
+    </div>
 </div>
 
 <script>
@@ -141,9 +157,7 @@
 
         const response = await fetch(url, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password })
         });
 
